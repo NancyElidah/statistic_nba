@@ -1,9 +1,15 @@
 package com.stat.nba.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.*;;
 @Entity
 public class ActionPlayer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     int id_match;
     int id_player;

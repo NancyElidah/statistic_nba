@@ -17,7 +17,7 @@ import com.stat.nba.model.Match;
 import com.stat.nba.repository.MatchRepository;
 
 @RestController
-@RequestMapping("/api/nba/")
+@RequestMapping("/api/nba/match/")
 public class MatchController {
     @Autowired 
     private MatchRepository match;
