@@ -19,10 +19,31 @@ JOIN equipe e2 on m.equipe2 = e2.id;
 
 CREATE OR REPLACE VIEW v_total_action as 
 SELECT 
-    id_match, count(id_action) 
+    id_match, id_action, count(id_action) 
 FROM Player_action
-group by id_match;
+group by id_action,id_match;
 
+
+create or REPLACE VIEW v_stat_joueur as (
+    SELECT j.id id_joueur, a.id id_action, count(a.id) total
+    FROM Player_action pa 
+    JOIN joueur j on j.id = pa.id_joueur
+    join action a on a.id = pa.id_action
+    group BY j.id , a.id
+);
+
+CREATE OR REPLACE view v_stat_all_joueur as (
+    SELECT 
+        j.id, j.nom, vsj.id_action, a.nom,  
+        CASE
+            when vsj.total is null then 0 else vsj.total 
+        END total
+    FROM joueur j 
+    left join v_stat_joueur vsj on  j.id = vsj.id_joueur
+    left join action a on a.id = vsj.id_action
+);
+
+CREATE OR REPLACE VIEW 
 
 CREATE OR REPLACE VIEW v_joueur_action as 
 SELECT 

@@ -16,8 +16,8 @@ public class PlayerController {
 	@Autowired
 	private PlayerRepositories player;
 	
-	@PostMapping("/save")
-    public void createEmployee(@RequestBody Player p) {
-         player.save(p);
-    }
+	// @PostMapping("/save")
+    // public void createEmployee(@RequestBody Player p) {
+    //      player.save(p);
+    // }
 }

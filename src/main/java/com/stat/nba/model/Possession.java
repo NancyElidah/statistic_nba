@@ -14,7 +14,7 @@ public class Possession {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id ;
 	int id_match;
-	int id_player;
+	int id_joueur;
 	Timestamp debut ;
 	Timestamp fin ;
 	public int getId() {
@@ -29,11 +29,11 @@ public class Possession {
 	public void setId_match(int id_match) {
 		this.id_match = id_match;
 	}
-	public int getId_player() {
-		return id_player;
+	public int getId_joueur() {
+		return id_joueur;
 	}
-	public void setId_player(int id_player) {
-		this.id_player = id_player;
+	public void setId_joueur(int id_joueur) {
+		this.id_joueur = id_joueur;
 	}
 	public Timestamp getDebut() {
 		return debut;
@@ -56,7 +56,7 @@ public class Possession {
 		super();
 		this.setId(id);
 		this.setId_match(id_match);
-		this.setId_player(id_player);
+		this.setId_joueur(id_player);
 		this.setDebut(debut);
 		this.setFin(fin);
 	}

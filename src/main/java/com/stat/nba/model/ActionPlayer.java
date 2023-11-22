@@ -4,15 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import java.util.*;;
 @Entity
+@Table(name="Player_action")
 public class ActionPlayer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     int id_match;
-    int id_player;
+    int id_joueur;
     int id_action;
     
     public ActionPlayer() {
@@ -30,11 +31,11 @@ public class ActionPlayer {
     public void setId_match(int id_match) {
         this.id_match = id_match;
     }
-    public int getId_player() {
-        return id_player;
+    public int getId_joueur() {
+        return id_joueur;
     }
-    public void setId_player(int id_player) {
-        this.id_player = id_player;
+    public void setId_joueur(int id_joueur) {
+        this.id_joueur = id_joueur;
     }
     public int getId_action() {
         return id_action;
